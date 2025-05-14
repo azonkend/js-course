@@ -632,3 +632,140 @@
 
 
 
+//================================================================================================//
+// // Прототипы в JavaScript
+
+// /**
+//  * [[Prototype]] - скрытое свойство объекта, которое содержит ссылку на его прототип.
+//  * prototype - свойство функции-конструктора, формирующее прототип для объектов, созданных через new.
+//  * __proto__ - устаревший способ доступа к [[Prototype]] (геттер/сеттер), лучше использовать Object.getPrototypeOf() и Object.setPrototypeOf().
+//  */
+
+// //================================================================================================//
+// // Цепочка прототипов
+// // Прототип используется как хранилище методов и свойств, доступных другим объектам.
+
+
+// // Устаревший метод (НЕ рекомендуется)
+// const vehicle = {
+//     move() {
+//         console.log('moving');
+//     },
+//     stop() {
+//         console.log('stopped');
+//     },
+// };
+
+// const ship = {
+//     name: 'Aurora',
+//     hasWheels: false,
+//     liftAnchorUp() {
+//         console.log('lifting anchor up');
+//     },
+//     liftAnchorDown() {
+//         console.log('lifting anchor down');
+//     },
+//     // Устаревший способ установки прототипа
+//     __proto__: vehicle 
+// };
+
+// ship.move(); // moving - наследованный метод
+// ship.stop(); // stopped - наследованный метод
+
+
+// // Современный метод (рекомендуется)
+// const vehicle2 = {
+//     move() {
+//         console.log('moving');
+//     },
+//     stop() {
+//         console.log('stopped');
+//     },
+// };
+
+// const ship2 = {
+//     name: 'Aurora',
+//     hasWheels: false,
+//     liftAnchorUp() {
+//         console.log('lifting anchor up');
+//     },
+//     liftAnchorDown() {
+//         console.log('lifting anchor down');
+//     },
+// };
+
+// // Используем Object.setPrototypeOf()
+// Object.setPrototypeOf(ship2, vehicle2); 
+
+// ship2.move(); // moving
+// ship2.stop(); // stopped
+
+// // Вывод только собственных свойств объекта
+// console.log(Object.keys(ship2));
+
+
+// //================================================================================================//
+// // Геттеры и сеттеры
+
+// const user = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+
+//     // Геттер
+//     get fullName() { 
+//         return `${this.firstName} ${this.lastName}`;
+//     },
+
+//     // Сеттер
+//     set fullName(value) {
+//         const [firstName, lastName] = value.split(' ');
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+// };
+
+// user.fullName = 'Tom Hardy';
+// console.log(user.fullName); // Tom Hardy
+// console.log(user.firstName); // Tom
+
+
+// //================================================================================================//
+// // Функция-конструктор
+
+// // Устаревший метод (каждый объект получает свою копию метода)
+// function UserOld(name, age) {
+//     this.name = name;
+//     this.age = age;
+
+//     this.sayHi = function() {
+//         console.log(`Hi, I am ${this.name}`);
+//     };
+// }
+
+// const userOld1 = new UserOld('John', 27);
+// const userOld2 = new UserOld('Bob', 30);
+
+// userOld1.sayHi(); // Hi, I am John
+// userOld2.sayHi(); // Hi, I am Bob
+
+// console.log(userOld1.sayHi === userOld2.sayHi); // false - создаются разные функции
+
+
+// // Современный метод (использование прототипа)
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// // Добавляем метод в прототип
+// User.prototype.sayHi = function() {
+//     console.log(`Hi, I am ${this.name}`);
+// };
+
+// const user1 = new User('John', 27);
+// const user2 = new User('Bob', 30);
+
+// user1.sayHi(); // Hi, I am John
+// user2.sayHi(); // Hi, I am Bob
+
+// console.log(user1.sayHi === user2.sayHi); // true - используется один метод на всех
