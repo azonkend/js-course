@@ -88,14 +88,14 @@
 // console.log(Boolean(17)) 
 // console.log(Boolean('Hello')) 
 
-// console.log(4 < 6) //true
-// console.log(4 > 6) //false
-// console.log(4 >= 6) //false
-// console.log(4 <= 4) //true
-// console.log(4 == '4') //true
-// console.log(4 === '4') //false
-// console.log(5 != '5') //false
-// console.log(5 !== '5') //true
+// console.log(4 < 6)
+// console.log(4 > 6) 
+// console.log(4 >= 6) 
+// console.log(4 <= 4)
+// console.log(4 == '4')
+// console.log(4 === '4') 
+// console.log(5 != '5') 
+// console.log(5 !== '5')
 
 // console.log(0 == '')
 // console.log(0 === '') 

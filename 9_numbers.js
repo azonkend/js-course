@@ -66,6 +66,9 @@
 // console.log(Number.isInteger(null)) // false
 
 
+//===============================================================================================//
+
+
 // const parseArray = arr => arr
 //     .map(el => Number.parseFloat(el))
 
@@ -98,13 +101,13 @@
 
 // Объект Math
 
-// console.log(Math.ceil(17.17))
-// console.log(Math.floor(17.71))
-// console.log(Math.round(-17.5))
-// console.log(Math.trunc(-17.5))
+// console.log(Math.ceil(17.17)) // 18
+// console.log(Math.floor(17.71)) // 17
+// console.log(Math.round(-17.5)) // -17
+// console.log(Math.trunc(-17.5)) // -17
 // console.log(Math.abs(-17)) // 17 (абсолютное значение числа)
-// console.log(Math.max(5, 7, 17, 1))
-// console.log(Math.min(6, 7, 1, -4))
+// console.log(Math.max(5, 7, 17, 1)) // 17
+// console.log(Math.min(6, 7, 1, -4)) //-4
 // console.log(Math.pow(3, 4)) // 81 (возведение в степень) 
 // console.log(Math.sqrt(9)) // 3
 
@@ -186,45 +189,6 @@
     Безопасные числа важны, когда вы работаете с математическими расчетами или данными, 
     где точность имеет критическое значение, например, в финансовых приложениях.
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function findAverage(array) {
-//     let sum = 0
-//     for(let i = 0; i < array.length; i++) {
-//         sum += array[i] / array.length
-//     }
-//     return sum
-// }
-
-// const findAverage = array => {
-//     return array.reduce((acc, num) => acc + num / array.length, 0)
-// }
-    
-// const array = ['1', '2', '3', '4', '5']
-// console.log(findAverage(array))
-
-
-
-
-
-
 
 
 

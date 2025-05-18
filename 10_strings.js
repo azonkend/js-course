@@ -8,16 +8,16 @@
 
 // const TEXT = 'message'
 
-// const myMessage = `
-// The text is ${TEXT.toUpperCase()},
-// And something else.
-// `
-// console.log(myMessage)
+// // // const myMessage = `
+// // // The text is ${TEXT.toUpperCase()},
+// // // And something else.
+// // // `
+// // // console.log(myMessage)
 
-// \n символ переноса строки
+// // // \n символ переноса строки
 
-// console.log(TEXT[TEXT.length - 1])
-// console.log(TEXT.at(-1))
+// // console.log(TEXT[TEXT.length - 1])
+// // console.log(TEXT.at(-1))
 // console.log(TEXT.charAt(0))
 
 //===============================================================================================//
@@ -43,26 +43,26 @@
 // console.log('text text'.indexOf('te'))
 // console.log('text text'.lastIndexOf('te'))
 // console.log('text text'.match(/text/g))
-// console.log('boks text text'.search(/text/g))
+// console.log('books text text'.search(/text/g))
 
 // console.log('text text'.includes('te'))
 // console.log('text text'.startsWith('te'))
 // console.log('text text'.endsWith('xt'))
 
-// console.log('text text'.charAt(3))
-// console.log('text text'.charCodeAt(3))
+console.log('text text'.charAt(3))
+console.log('text text'.charCodeAt(3))
 
-// console.log('some '.concat('text'))
-// console.log('text '.repeat(2))
-// console.log('text'.replace(/t/g, 'T'))
-// console.log(' text  '.trim())
-// console.log('some text'.split(' '))
-// console.log('some text'.slice(2, 6))
-// console.log('some text'.substr(2, 3)) // Устаревший метод
-// console.log('some text'.substring(2, 3))
+console.log('some '.concat('text'))
+console.log('text '.repeat(2))
+console.log('text'.replace(/t/g, 'T'))
+console.log(' text  '.trim())
+console.log('some text'.split(' '))
+console.log('some text'.slice(2, 6))
+console.log('some text'.substr(2, 3)) // Устаревший метод
+console.log('some text'.substring(2, 3))
 
-// console.log('some text'.toUpperCase())
-// console.log('Some Text'.toLowerCase())
+console.log('some text'.toUpperCase())
+console.log('Some Text'.toLowerCase())
 
 // 'abcdefg', 4 => ['abcd', 'efg'] => ['Abcd', 'Efg'] => 'Abcd/nEng'
 
@@ -191,63 +191,6 @@
 // }
 
 // console.log(calc('3 / 2'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

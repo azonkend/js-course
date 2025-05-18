@@ -29,16 +29,16 @@
 // let regex = /[a-z]/g
 // console.log(typeof regex) 
 
-// console.log(typeof null) // 
-// console.log(typeof Symbol('Hello')) // 
-// console.log(typeof undefined) // 
-// console.log(typeof 17) // 
-// console.log(typeof 17.17) // 
-// console.log(typeof '17') // 
-// console.log(typeof "17") // 
-// console.log(typeof "I'm a string") // 
-// console.log(typeof true) // 
-// console.log(typeof false) // 
+// console.log(typeof null) 
+// console.log(typeof Symbol('Hello')) 
+// console.log(typeof undefined) 
+// console.log(typeof 17) 
+// console.log(typeof 17.17) 
+// console.log(typeof '17') 
+// console.log(typeof "17") 
+// console.log(typeof "I'm a string") 
+// console.log(typeof true) 
+// console.log(typeof false) 
 
 //===============================================================================================//
 
@@ -62,10 +62,6 @@
 
 // console.log(house.numberOfWindows)
 // console.log(anotherHouse.numberOfWindows)
-
-
-
-
 
 
 

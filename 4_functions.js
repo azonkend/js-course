@@ -30,9 +30,9 @@
 // return statement
 // function getEvenOdd(num) {
 //     if (num % 2 === 0) {
-//         return 'even'
+//         return console.log('even')
 //     } else {
-//         return 'odd'
+//         return console.log('odd') 
 //     }
 // }
 

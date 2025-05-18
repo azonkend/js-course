@@ -73,12 +73,12 @@ array.forEach(callback(currentValue, index, array), thisArg);
     Если нужно прервать выполнение, лучше использовать цикл for или метод some.
 */ 
 
-//===============================================================================================//
 
 //Примеры:
 
 // Нахождение чисел, кратные 3 с помощью метода forEach()
 
+// Первый способ
 // const getSpecialNumbers = numbers => {
 //     let specialNumbers = []
 
@@ -97,7 +97,7 @@ array.forEach(callback(currentValue, index, array), thisArg);
 // console.log(getSpecialNumbers(arr));
 
 
-
+// Второй способ
 // const getSpecialNumbers = numbers => {
 //     let specialNumbers = []
 
@@ -143,6 +143,7 @@ array.filter(callback(element, index, array), thisArg);
 
 */
 
+// Первый вариант
 // const getSpecialNumbers = numbers => {
 //     const result = numbers.filter(num => {
 //         if(num % 3 === 0) {
@@ -156,7 +157,7 @@ array.filter(callback(element, index, array), thisArg);
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // console.log(getSpecialNumbers(arr));
 
-
+// Второй вариант
 // const getSpecialNumbers = numbers => {
 //     return numbers.filter(num => num % 3 === 0)
 // }
@@ -186,6 +187,7 @@ array.filter(callback(element, index, array), thisArg);
 // const sortArray = numbers => {
 //     // Создание коппии массива, чтобы не изменять исходный
 //     // let copy = [...numbers]
+//     // Коппирование всех элементов индексов
 //     let copy = numbers.slice()
 //     copy.sort((a, b) => a - b)
 
@@ -260,6 +262,7 @@ array.filter(callback(element, index, array), thisArg);
 
 // Метод splice() изменяет содержимое массива, добавляя или удаляя элементы в указанном месте массива.
 
+// Удаление элементов
 // const tasks = [
 //     'Проверить тесты',
 //     'Выполнить код-ревью',
@@ -270,8 +273,18 @@ array.filter(callback(element, index, array), thisArg);
 //     'Обновить бэклог'
 // ]
 //   tasks.splice(1, 4)
-  
 //   console.log(tasks)
+
+
+// Добавление элементов. Достаточно установить deleteCount в 0
+// let arr = ["Я", "изучаю", "JavaScript"]
+
+// // с индекса 2
+// // удалить 0 элементов
+// // вставить "сложный", "язык"
+// arr.splice(2, 0, "сложный", "язык")
+
+// console.log(arr) // "Я", "изучаю", "сложный", "язык", "JavaScript"
 
 //===============================================================================================//
 
@@ -283,6 +296,7 @@ array.filter(callback(element, index, array), thisArg);
 // indexOf() Возвращает индекс элемента. В противном случае -1.
 // includes() Проверяет, входит ли элемент в массив или нет
 
+// Примеры:
 // const arr = ['Bob', 'John', 'Tom'].indexOf('Tom')
 // console.log(arr)
 
@@ -315,7 +329,7 @@ array.filter(callback(element, index, array), thisArg);
 
 // Метод map()
 
-// Применяется к каждому эл. массива и возвращает новый массив(Возвращает новый массив, в котором каждый элемент — результат вызова callback-функции для каждого).
+// Применяется к каждому эл. массива и возвращает новый массив(в котором каждый элемент — результат вызова callback-функции для каждого).
 
 // const getMessagesForPassedStudents = (allStudents, failedStudents) => {
 //     return allStudents
@@ -447,38 +461,64 @@ array.filter(callback(element, index, array), thisArg);
 
 //===============================================================================================//
 // 🔹 Перебор элементов массива
-const arr = [1, 2, 3];
+// const arr = [1, 2, 3];
 
-arr.forEach(num => console.log(num)); // 1, 2, 3 (перебор элементов)
+// arr.forEach(num => console.log(num)); // 1, 2, 3 (перебор элементов)
 
 
 // 🔹 Добавление/удаление элементов
-const numbers = [1, 2, 3];
+// const numbers = [1, 2, 3];
 
-numbers.push(4);  // [1, 2, 3, 4] (добавляет в конец) *
-numbers.pop();    // [1, 2, 3] (удаляет последний) *
-numbers.unshift(0); // [0, 1, 2, 3] (добавляет в начало) *
-numbers.shift();  // [1, 2, 3] (удаляет первый) *
-numbers.splice(1, 1, 99); // [1, 99, 3] (удаляет и добавляет по индексу) *
-const sliced = numbers.slice(1, 2); // [99] (копирует часть массива)
-const combined = numbers.concat([4, 5]); // [1, 99, 3, 4, 5] (объединяет массивы)
+// numbers.push(4);  // [1, 2, 3, 4] (добавляет в конец) *
+// numbers.pop();    // [1, 2] (удаляет последний) *
+// numbers.unshift(0); // [0, 1, 2, 3] (добавляет в начало) *
+// numbers.shift();  // [2, 3] (удаляет первый) *
+// numbers.splice(1, 1, 99); // [1, 99, 3] (удаляет и добавляет по индексу) *
+// console.log(numbers)
+
+// const sliced = numbers.slice(1, 2); // [2] (копирует часть массива)
+// console.log(sliced)
+
+// const combined = numbers.concat([4, 5]); // [1, 2, 3, 4, 5] (объединяет массивы)
+// console.log(combined)
 
 
 // 🔹 Преобразование массива
-const doubled = numbers.map(num => num * 2); // [2, 198, 6] (преобразует элементы)
-const sorted = [3, 1, 2].sort(); // [1, 2, 3] (сортирует) *
-const reversed = [1, 2, 3].reverse(); // [3, 2, 1] (переворачивает) *
-const joined = numbers.join('-'); // "1-99-3" (объединяет в строку)
-const sum = numbers.reduce((acc, num) => acc + num, 0); // 103 (сворачивает массив)
-const flatArray = [1, [2, 3], [4, 5]].flat(); // [1, 2, 3, 4, 5] (разглаживает вложенные массивы)
+// const numbers = [1, 2, 3];
+// const doubled = numbers.map(num => num * 2); // [2, 4, 6] (преобразует элементы)
+// console.log(doubled)
 
+// const sorted = [3, 1, 2].sort(); // [1, 2, 3] (сортирует) *
+// console.log(sorted)
+
+// const reversed = [1, 2, 3].reverse(); // [3, 2, 1] (переворачивает) *
+// console.log(reversed)
+
+// const joined = numbers.join('-'); // "1-2-3" (объединяет в строку)
+// console.log(joined)
+
+// const sum = numbers.reduce((acc, num) => acc + num, 0); // 6 (сворачивает массив)
+// console.log(sum)
+
+// const flatArray = [1, [2, 3], [4, 5]].flat(); // [1, 2, 3, 4, 5] (разглаживает вложенные массивы)
+// console.log(flatArray)
 
 // 🔹 Поиск по массиву
-const hasTwo = numbers.includes(2); // false (проверяет наличие)
-const found = numbers.find(num => num > 1); // 99 (возвращает первый найденный)
-const filtered = numbers.filter(num => num > 1); // [99, 3] (фильтрует)
-const someGreaterThanTwo = numbers.some(num => num > 2); // true (хотя бы один)
-const allGreaterThanZero = numbers.every(num => num > 0); // true (все соответствуют)
+// const hasTwo = numbers.includes(2); // true (проверяет наличие)
+// console.log(hasTwo)
+
+// const found = numbers.find(num => num > 1); // 2 (возвращает первый найденный)
+// console.log(found)
+
+// const filtered = numbers.filter(num => num > 1); // [2, 3] (фильтрует)
+// console.log(filtered)
+
+// const someGreaterThanTwo = numbers.some(num => num > 2); // true (хотя бы один)
+// console.log(someGreaterThanTwo)
+
+// const allGreaterThanZero = numbers.every(num => num > 0); // true (все соответствуют)
+// console.log(allGreaterThanZero)
+
 
 //===============================================================================================//
 // 🎯 Итог:
@@ -555,7 +595,7 @@ array.forEach(callback(currentValue, index, array), thisArg);
 // 🔹 Пример 1: Вывод элементов массива
 const numbersArr = [1, 2, 3, 4, 5];
 
-numbersArr.forEach(num => console.log(num)); 
+// numbersArr.forEach(num => console.log(num)); 
 // 1
 // 2
 // 3
@@ -564,7 +604,7 @@ numbersArr.forEach(num => console.log(num));
 
 //===============================================================================================//
 // 🔹 Пример 2: Использование индекса
-numbersArr.forEach((num, index) => console.log(`Индекс ${index}: значение ${num}`));
+// numbersArr.forEach((num, index) => console.log(`Индекс ${index}: значение ${num}`));
 // Индекс 0: значение 1
 // Индекс 1: значение 2
 // Индекс 2: значение 3
@@ -573,26 +613,26 @@ numbersArr.forEach((num, index) => console.log(`Индекс ${index}: знач�
 
 //===============================================================================================//
 // 🔹 Пример 3: Изменение элементов массива (не рекомендуется)
-numbersArr.forEach((num, index, arr) => arr[index] = num * 2);
-console.log(numbersArr); // [2, 4, 6, 8, 10]
+// numbersArr.forEach((num, index, arr) => arr[index] = num * 2);
+// console.log(numbersArr); // [2, 4, 6, 8, 10]
 
 //===============================================================================================//
 // 🔹 Пример 4: Использование thisArg
-const obj = {
-    multiplier: 3,
-    multiplyNumbers(arr) {
-        arr.forEach(function(num) {
-            console.log(num * this.multiplier);
-        }, this); // Передаем thisArg
-    }
-};
+// const obj = {
+//     multiplier: 3,
+//     multiplyNumbers(arr) {
+//         arr.forEach(function(num) {
+//             console.log(num * this.multiplier);
+//         }, this); // Передаем thisArg
+//     }
+// };
 
-obj.multiplyNumbers(numbersArr);
+// obj.multiplyNumbers(numbersArr);
+// 3
 // 6
+// 9
 // 12
-// 18
-// 24
-// 30
+// 15
 
 //===============================================================================================//
 // 🎯 Итог:
@@ -609,7 +649,7 @@ obj.multiplyNumbers(numbersArr);
 // Метод `.filter()` создает **новый массив**, оставляя только те элементы, которые **соответствуют условию**.
 
 // 📌 Синтаксис:
-array.filter(callback(element, index, array), thisArg);
+// array.filter(callback(element, index, array), thisArg);
     // callback: Функция, выполняемая для каждого элемента массива.
     //    element: Текущий обрабатываемый элемент.
     //    index (необязательно): Индекс элемента.
@@ -674,7 +714,7 @@ console.log(uniqueAges);
 // По умолчанию элементы сортируются **как строки**, даже если это числа!
 
 // 📌 Синтаксис:
-array.sort(compareFn);
+// array.sort(compareFn);
     // compareFn (необязательно): Функция сравнения для точной сортировки.
 
 
@@ -739,7 +779,7 @@ console.log(sortedUsers);
 // Метод `.reduce()` выполняет **итеративное вычисление** над массивом, превращая его в **одно значение**.
 
 // 📌 Синтаксис:
-array.reduce(callback(acc, item, index, arr), initialValue);
+// array.reduce(callback(acc, item, index, arr), initialValue);
     // acc: Аккумулятор, сохраняющий промежуточный результат.
     // item: Текущий элемент массива.
     // index (необязательно): Индекс текущего элемента.
@@ -866,7 +906,7 @@ console.log(flatAlternative); // [1, 2, 3, 4, 5, 6]
 // Метод `.slice()` **возвращает новый массив**, содержащий часть элементов исходного массива.
 
 // 📌 Синтаксис:
-array.slice(start, end);
+// array.slice(start, end);
     // start: Индекс начала выборки (включительно).
     // end (необязательно): Индекс конца выборки (НЕ включается в новый массив).
 
@@ -879,21 +919,21 @@ array.slice(start, end);
 // 🔹 Примеры использования
 
 // 📌 Получение части массива
-const arrayNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const slicedArr = arrayNumber.slice(3, 8);
-console.log(slicedArr); // [4, 5, 6, 7, 8]
+// const arrayNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const slicedArr = arrayNumber.slice(3, 8);
+// console.log(slicedArr); // [4, 5, 6, 7, 8]
 
-// 📌 Копирование всего массива
-const copiedArr = arrayNumber.slice();
-console.log(copiedArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// // 📌 Копирование всего массива
+// const copiedArr = arrayNumber.slice();
+// console.log(copiedArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // 📌 Использование отрицательных индексов
-const lastThree = arrayNumber.slice(-3);
-console.log(lastThree); // [7, 8, 9]
+// const lastThree = arrayNumber.slice(-3);
+// console.log(lastThree); // [7, 8, 9]
 
 // 📌 Удаление первого элемента
-const withoutFirst = arrayNumber.slice(1);
-console.log(withoutFirst); // [2, 3, 4, 5, 6, 7, 8, 9]
+// const withoutFirst = arrayNumber.slice(1);
+// console.log(withoutFirst); // [2, 3, 4, 5, 6, 7, 8, 9]
 
 //===============================================================================================//
 // 🔹 ⚠️ Важно помнить:
@@ -978,8 +1018,8 @@ console.log(numbersArr1);
 // `.includes()` **проверяет наличие элемента** в массиве и возвращает `true` или `false`.
 
 // 📌 Синтаксис:
-array.indexOf(searchElement, fromIndex);
-array.includes(searchElement, fromIndex);
+// array.indexOf(searchElement, fromIndex);
+// array.includes(searchElement, fromIndex);
     // searchElement: Элемент, который ищем.
     // fromIndex (необязательно): Начальный индекс поиска.
 
@@ -1032,7 +1072,7 @@ console.log(passedStudents2); // ["Ann", "Kate"]
 // Метод `.map()` **создает новый массив**, в котором каждый элемент — **результат вызова callback-функции**.
 
 // 📌 Синтаксис:
-array.map(callback(element, index, array), thisArg);
+// array.map(callback(element, index, array), thisArg);
     // element: Текущий элемент массива.
     // index (необязательно): Индекс текущего элемента.
     // array (необязательно): Сам массив.
