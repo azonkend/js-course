@@ -1,113 +1,3 @@
-// Типы данных
-
-//===============================================================================================//
-
-// Примитивные (Примитивы - значения, передаются по значению, неизменяемы)
-// Number - 1156, 3.14, 1e6, NaN
-// String - "Hello", 'Hello', `Hello`, "Hello World"
-// Boolean - true, false
-// Null - null
-// Undefined - undefined
-// Symbol - Symbol('id')
-
-//===============================================================================================//
-
-//Ссылочные (Объект - совокупность значений, передаются по ссылке, изменяемы)
-// Object - {}, {name: 'John', age: 30}, new Date(), new RegExp...
-// Array - [], [1, 2, 3]
-// Function - function() {}
-
-// const obj = {number: 1, text: 'bbb'}
-// console.log(typeof obj) 
-
-// const arr = [1, 2, 3]
-// console.log(typeof arr) 
-
-// const func = () => console.log("Hello")
-// console.log(typeof func) 
-
-// let regex = /[a-z]/g
-// console.log(typeof regex) 
-
-// console.log(typeof null) 
-// console.log(typeof Symbol('Hello')) 
-// console.log(typeof undefined) 
-// console.log(typeof 17) 
-// console.log(typeof 17.17) 
-// console.log(typeof '17') 
-// console.log(typeof "17") 
-// console.log(typeof "I'm a string") 
-// console.log(typeof true) 
-// console.log(typeof false) 
-
-//===============================================================================================//
-
-// Передача по значению
-// const goodNumber = 17
-// let anotherNumber = goodNumber
-// anotherNumber = 77
-
-// console.log(goodNumber)
-// console.log(anotherNumber)
-
-//===============================================================================================//
-
-// Передача по ссылке
-// const house = {
-//     height: 5,
-//     numberOfWindows: 10
-// }
-// const anotherHouse = house
-// anotherHouse.numberOfWindows = 7
-
-// console.log(house.numberOfWindows)
-// console.log(anotherHouse.numberOfWindows)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 📌 Типы данных в JavaScript
 
 //===============================================================================================//
@@ -212,3 +102,99 @@ console.log(anotherCar.color);// "blue" (потому что обе переме
 // 🎯 Итог:
 // ✅ Примитивные типы — неизменяемые, передаются по **значению**.
 // ✅ Ссылочные типы — изменяемые, передаются **по ссылке**.
+
+
+
+// Проверка знаний
+// Что выведет консоль? 
+
+// const obj = {number: 1, text: 'bbb'}
+// console.log(typeof obj) 
+
+// const arr = [1, 2, 3]
+// console.log(typeof arr) 
+
+// const func = () => console.log("Hello")
+// console.log(typeof func) 
+
+// let regex = /[a-z]/g
+// console.log(typeof regex) 
+
+// console.log(typeof null) 
+// console.log(typeof Symbol('Hello')) 
+// console.log(typeof undefined) 
+// console.log(typeof 17) 
+// console.log(typeof 17.17) 
+// console.log(typeof '17') 
+// console.log(typeof "17") 
+// console.log(typeof "I'm a string") 
+// console.log(typeof true) 
+// console.log(typeof false) 
+
+//===============================================================================================//
+
+// Передача по значению
+// const goodNumber = 17
+// let anotherNumber = goodNumber
+// anotherNumber = 77
+
+// console.log(goodNumber)
+// console.log(anotherNumber)
+
+//===============================================================================================//
+
+// Передача по ссылке
+// const house = {
+//     height: 5,
+//     numberOfWindows: 10
+// }
+// const anotherHouse = house
+// anotherHouse.numberOfWindows = 7
+
+// console.log(house.numberOfWindows)
+// console.log(anotherHouse.numberOfWindows)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
